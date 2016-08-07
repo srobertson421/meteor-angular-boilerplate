@@ -1,8 +1,10 @@
-# cook-app
+# Meteor Angular Boilerplate
 Meteor app for finding cooks and getting that home-cooked meal you've been looking for!
 
-## Style Guide
-When contributing code be sure have tabs set to ```2``` and tabs converted to spaces.
+## Installation
+```git clone```
+```cd meteor-angular-boilerplate```
+```meteor```
 
 ## Application Structure
 This app utilizes the standard structure for >1.4 Meteor projects:
