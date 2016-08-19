@@ -3,27 +3,31 @@ import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 
 import { name as Navigation } from '../shared/navigation/navigation';
+import { name as Signup } from '../signup/signup';
+import { name as Login } from '../login/login';
 import { name as Home } from '../home/home';
 import { name as About } from '../about/about';
 
-import template from './cook_app.html'
+import template from './main.html'
 
-class CookApp {}
+class Main {}
 
-const name = 'cookApp';
+const name = 'main';
 
 export default angular.module(name, [
   angularMeteor,
   uiRouter,
   'accounts.ui',
   Navigation,
+  Signup,
+  Login,
   Home,
   About
 ])
 .component(name, {
   template,
   controllerAs: name,
-  controller: CookApp
+  controller: Main
 })
 .config(config)
 .run(run);
@@ -41,7 +45,7 @@ function run($rootScope, $state) {
 
   $rootScope.$on('$stateChangeError', (event, toState, toParams, fromState, fromParams, error) => {
     if(error === 'AUTH_REQUIRED') {
-      $state.go('parties');
+      $state.go('signup');
     }
   });
 }

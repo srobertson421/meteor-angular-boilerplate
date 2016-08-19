@@ -1,0 +1,12 @@
+<h1>Signup</h1>
+<div ng-show="signup.error" class="alert alert-warning" role="alert">
+  <strong>{{signup.error.reason}}</strong>
+</div>
+<form name="signupForm">
+  <div class="form-group">
+    <input type="email" class="form-control" ng-model="signup.credentials.email" placeholder="Email" required>
+    <input type="password" class="form-control" ng-model="signup.credentials.password" placeholder="Password" required>
+    <br>
+    <input ng-click="signup.signup()" ng-disabled="signup.signupForm.$invalid()" type="button" class="btn btn-primary" value="Signup">
+  </div>
+</form>

@@ -1,0 +1,12 @@
+<h1>Login</h1>
+<div ng-show="login.error" class="alert alert-warning" role="alert">
+  <strong>{{login.error}}</strong>
+</div>
+<form name="loginForm">
+  <div class="form-group">
+    <input type="email" class="form-control" ng-model="login.credentials.email" placeholder="Email" required>
+    <input type="password" class="form-control" ng-model="login.credentials.password" placeholder="Password" required>
+    <br>
+    <input ng-click="login.login()" ng-disabled="login.loginForm.$invalid()" type="button" class="btn btn-primary" value="Login">
+  </div>
+</form>

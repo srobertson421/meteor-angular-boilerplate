@@ -22,6 +22,15 @@ function config($stateProvider) {
   $stateProvider
   .state('home', {
     url: '/',
-    template: '<home></home>'
+    template: '<home></home>',
+    resolve: {
+      currentUser($q) {
+        if (Meteor.userId() === null) {
+          return $q.reject('AUTH_REQUIRED');
+        } else {
+          return $q.resolve();
+        }
+      }
+    }
   });
 }
