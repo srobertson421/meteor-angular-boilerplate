@@ -1,5 +1,6 @@
 import angular from 'angular';
 import 'bootstrap/dist/css/bootstrap.css';
+import '../imports/ui/stylesheets/flatbootstrap.css';
  
 import { Meteor } from 'meteor/meteor';
 
