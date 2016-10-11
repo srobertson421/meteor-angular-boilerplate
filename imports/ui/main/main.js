@@ -2,11 +2,11 @@ import angular from 'angular';
 import angularMeteor from 'angular-meteor';
 import uiRouter from 'angular-ui-router';
 
-import { name as Navigation } from '../shared/navigation/navigation';
-import { name as Signup } from '../signup/signup';
-import { name as Login } from '../login/login';
-import { name as Home } from '../home/home';
-import { name as About } from '../about/about';
+import { name as Navigation } from '../components/navigation/navigation';
+import { name as Signup } from '../pages/signup/signup';
+import { name as Login } from '../pages/login/login';
+import { name as Home } from '../pages/home/home';
+import { name as About } from '../pages/about/about';
 
 import template from './main.html'
 

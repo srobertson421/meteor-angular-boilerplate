@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
  
 import { Meteor } from 'meteor/meteor';
 
-import { name as Main } from '../imports/ui/components/main/main';
+import { name as Main } from '../imports/ui/main/main';
  
 function onReady() {
   angular.bootstrap(document, [
