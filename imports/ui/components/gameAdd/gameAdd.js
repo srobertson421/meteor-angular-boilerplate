@@ -1,30 +1,32 @@
 import angular from 'angular';
 import angularMeteor from 'angular-meteor';
-import { Games } from '../../../api/games';
+import { Meteor } from 'meteor/meteor';
 
-import template from './gameList.html';
+import template from './gameAdd.html';
 
-class GameList {
+class GameAdd {
   constructor($reactive, $scope) {
     'ngInject';
 
     $reactive(this).attach($scope);
 
-    this.subscribe('games.all');
+    this.newGame = {
+      title: ''
+    }
 
-    this.helpers({
-      games() {
-        return Games.find({});
-      }
-    });
+    this.helpers({});
+  }
+
+  submitGame() {
+    Meteor.call('newGame', this.newGame);
   }
 }
 
-const name = 'gameList';
+const name = 'gameAdd';
 
 export default angular.module(name, [angularMeteor])
 .component(name, {
   template,
   controllerAs: name,
-  controller: GameList
+  controller: GameAdd
 });
